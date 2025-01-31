@@ -50,9 +50,9 @@ backup_raspberry() {
 
 cleanup_old_backups() {
     echo "Suppression des fichiers de sauvegarde vieux de plus de 4 mois dans $BACKUP_DIR..."
-    find "$BACKUP_DIR" -type f -name "*.img" -mtime +120 -exec rm -f {} \;
+    find "$BACKUP_DIR" -type f -name "*.img" -mtime +7 -exec rm -f {} \;
     if [ $? -eq 0 ]; then
-        local message=":recycle: **backup_rpi.sh**: Nettoyage terminé. Les fichiers de sauvegarde vieux de plus de 4 mois ont été supprimés."
+        local message=":recycle: **backup_rpi.sh**: Nettoyage terminé. Les fichiers de sauvegarde vieux de plus de 7 joursont été supprimés."
         echo "Nettoyage terminé."
     else
         local message=":x: **backup_rpi.sh**: Échec du nettoyage des anciens fichiers de sauvegarde."

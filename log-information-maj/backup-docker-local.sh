@@ -95,8 +95,8 @@ backup_container() {
 # Fonction pour supprimer les sauvegardes anciennes de plus de 4 mois
 clean_old_backups() {
     echo "Vérification des sauvegardes anciennes..."
-    find $LOCAL_BACKUP_DIR -type f -name "*.tar.gz" -mtime +120 -exec rm -f {} \;
-    echo "Suppression des sauvegardes de plus de 4 mois terminée."
+    find $LOCAL_BACKUP_DIR -type f -name "*.tar.gz" -mtime +7 -exec rm -f {} \;
+    echo "Suppression des sauvegardes de plus de 7 jours terminée."
 }
 
 # Sauvegarde des Raspberry Pi
